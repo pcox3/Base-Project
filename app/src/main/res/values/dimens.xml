@@ -6,6 +6,7 @@
     <dimen name="textSizeLarge">18sp</dimen>
     <dimen name="textSizeExtraLarge">22sp</dimen>
 
+    <dimen name="marginSmallest">4dp</dimen>
     <dimen name="marginSmall">8dp</dimen>
     <dimen name="marginMedium">16dp</dimen>
     <dimen name="marginLarge">20dp</dimen>
@@ -14,7 +15,9 @@
     <dimen name="radiusMedium">16dp</dimen>
     <dimen name="radiusLarge">25dp</dimen>
 
+    <dimen name="paddingSmallest">4dp</dimen>
     <dimen name="paddingSmall">8dp</dimen>
+    <dimen name="padding">12dp</dimen>
     <dimen name="paddingMedium">16dp</dimen>
     <dimen name="paddingLarge">20dp</dimen>
 

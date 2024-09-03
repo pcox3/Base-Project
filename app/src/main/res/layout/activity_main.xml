@@ -1,9 +1,362 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- TODO add scrolling effect for off screen content. -->
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/paddingLarge">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/person"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/profile"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large"/>
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/search_bar"
+                app:layout_constraintEnd_toStartOf="@+id/notification"
+                app:layout_constraintHorizontal_bias="0.10"
+                app:layout_constraintStart_toEndOf="@+id/person">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_navigation"
+                    android:drawablePadding="@dimen/paddingSmallest"
+                    android:drawableTint="@color/colorLightGray"
+                    android:text="Your location"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textColor="@color/colorLightGray" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:drawablePadding="@dimen/paddingSmallest"
+                    android:text="Wertheimer, Illinois"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="@dimen/textSizeMedium" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/notification"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_notification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:transitionName="search_bar"
+                android:clickable="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/ic_round"
+                android:layout_marginTop="@dimen/marginLarge"
+                app:layout_constraintTop_toBottomOf="@id/linearLayout3">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:queryBackground="@color/colorTransparent"
+                    app:queryHint="Enter the receipt number ..."
+                    android:focusableInTouchMode="false"
+                    android:focusable="false"
+                    android:inputType="none"
+                    app:searchIcon="@drawable/icon_search"
+                    app:iconifiedByDefault="false"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="@dimen/marginSmall"
+                    android:src="@drawable/ic_scan"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="@dimen/paddingLarge"
+        android:background="@color/colorLighterGray">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tracking"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/textSizeLarge"
+            android:textColor="@color/colorBlack"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:orientation="vertical"
+            android:background="@drawable/ic_rounded">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/paddingMedium">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shipment Number"
+                    android:textSize="@dimen/textSizeSmaller"
+                    app:layout_constraintBottom_toTopOf="@+id/materialTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/materialTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEJ20089934122231"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textSizeMedium"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_truck"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/group_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:foreground="@color/colorLighterGray"
+                    android:layout_marginTop="@dimen/marginMedium"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/materialTextView"/>
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/marginSmall"
+                    app:layout_constraintTop_toBottomOf="@id/group_divider">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_load"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/marginSmall"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sender"
+                                android:textSize="@dimen/textSizeSmaller" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Atlanta, 5243"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/colorBlack"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:textSize="@dimen/textSizeSmaller"/>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2 day-s days"
+                                android:fontFamily="@font/poppins_regular"
+                                android:drawableStart="@drawable/ic_active"
+                                android:drawablePadding="@dimen/paddingSmall"
+                                android:textColor="@color/colorBlack"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/marginMedium"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_cargo"/>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/marginSmall"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sender"
+                                android:textSize="@dimen/textSizeSmaller"/>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chicago, 6342"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/colorBlack"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/textSizeSmaller"
+                                android:text="Status" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2 day-s days"
+                                android:fontFamily="@font/poppins_regular"
+                                android:textColor="@color/colorBlack"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:foreground="@color/colorLighterGray"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Stop"
+                android:textColor="@color/colorAccent"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_add"
+                app:iconGravity="textStart"
+                app:iconTint="@color/colorAccent"
+                android:insetBottom="0dp"
+                android:insetTop="0dp"
+                app:rippleColor="@color/colorAccentLight"
+                style="@style/Widget.MaterialComponents.Button.TextButton"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:text="Available vehicles"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/textSizeLarge"
+            android:textColor="@color/colorBlack"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categories_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginMedium"
+            tools:listitem="@layout/itemview_vehicles"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        app:elevation="0dp"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="25dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/container"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginVertical="@dimen/marginSmall"
+    android:background="@color/colorWhite"
+    android:padding="@dimen/paddingMedium">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/person"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_package"
+        android:tint="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/marginMedium"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.10"
+        app:layout_constraintStart_toEndOf="@+id/person">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_arrow_down"
+            android:drawablePadding="@dimen/paddingSmallest"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Macbook pro M2"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textSizeLarge" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#NE43857340857904" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginHorizontal="@dimen/marginSmall"
+                android:src="@drawable/ic_active"
+                android:tint="@color/colorGray" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#Paris" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginHorizontal="@dimen/marginSmall"
+                android:src="@drawable/ic_arrow_forward"
+                android:tint="@color/colorGray" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Morocco" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

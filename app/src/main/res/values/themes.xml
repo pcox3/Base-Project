@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Base_Project" parent="android:Theme.Material.Light.NoActionBar">
+    <style name="Theme.Base_Project" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorWhite</item>
         <item name="android:colorPrimaryDark">@color/colorPrimary</item>
         <item name="android:colorAccent">@color/colorAccent</item>
 
         <item name="android:statusBarColor">@color/colorPrimary</item>
     </style>
+
+    <style name="PopinsRegular" parent="Theme.Base_Project">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+    <style name="PoppinsBold" parent="Theme.Base_Project">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="chipStrokeColor">@color/chip_stroke_color</item>
+        <item name="android:textColor">@color/chip_text_color</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipCornerRadius">@dimen/radiusSmall</item>
+        <item name="checkedIcon">@drawable/ic_done</item>
+        <item name="chipSurfaceColor">@color/chip_background_color</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Theme.Base_Project">
+        <item name="tabIndicatorColor">@color/colorAccentLight</item>
+        <item name="tabTextColor">@color/iconGray</item>
+        <item name="tabSelectedTextColor">@color/colorWhite</item>
+        <item name="tabIndicatorFullWidth">true</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabPaddingEnd">@dimen/paddingMedium</item>
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+        <item name="tabIndicatorHeight">3dp</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">@dimen/textSizeMedium</item>
+    </style>
+
 </resources>

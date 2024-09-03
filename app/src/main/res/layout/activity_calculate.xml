@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLighterGray"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <!-- TODO add scrolling effect for off screen content. -->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        android:background="@color/colorPrimary"
+        app:titleCentered="true"
+        app:title="Calculate"
+        app:titleTextAppearance="@style/PoppinsBold"
+        app:titleTextColor="@color/colorWhite"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:padding="@dimen/paddingLarge"
+        android:orientation="vertical">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/textSizeExtraLarge"
+            android:textColor="@color/colorBlack"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:padding="@dimen/paddingMedium"
+            android:orientation="vertical"
+            android:background="@drawable/ic_rounded">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:orientation="horizontal"
+                android:background="@drawable/ic_rounded_lighter_gray">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_outline_outbox"/>
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/marginSmall"
+                    android:background="@color/colorLighterGray"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorTransparent"
+                    android:textColorHint="@color/colorGray"
+                    android:fontFamily="@font/poppins_regular"
+                    android:imeOptions="actionNext"
+                    android:hint="Sender location"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginMedium"
+                android:padding="@dimen/padding"
+                android:orientation="horizontal"
+                android:background="@drawable/ic_rounded_lighter_gray">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_outline_archive"/>
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/marginSmall"
+                    android:background="@color/colorLighterGray"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorTransparent"
+                    android:textColorHint="@color/colorGray"
+                    android:fontFamily="@font/poppins_regular"
+                    android:imeOptions="actionNext"
+                    android:hint="Receiver location"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/marginMedium"
+                android:padding="@dimen/padding"
+                android:orientation="horizontal"
+                android:background="@drawable/ic_rounded_lighter_gray">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_empty"/>
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/marginSmall"
+                    android:background="@color/colorLighterGray"/>
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorTransparent"
+                    android:textColorHint="@color/colorGray"
+                    android:fontFamily="@font/poppins_regular"
+                    android:imeOptions="actionDone"
+                    android:hint="Approx weight location"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:text="Packaging"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/textSizeExtraLarge"
+            android:textColor="@color/colorBlack"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What are you sending?"
+            android:textSize="@dimen/textSizeLarge"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginMedium"
+            android:padding="@dimen/paddingMedium"
+            android:orientation="horizontal"
+            android:background="@drawable/ic_rounded">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_load"/>
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/marginSmall"
+                android:background="@color/colorLighterGray"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Box"
+                android:fontFamily="@font/poppins_medium"
+                android:textSize="@dimen/textSizeLarge"
+                android:textColor="@color/colorBlack"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_down"
+                android:tint="@color/colorGray"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginLarge"
+            android:text="Categories"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="@dimen/textSizeLarge"
+            android:textColor="@color/colorBlack"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What are you sending?"
+            android:textSize="@dimen/textSizeLarge"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:chipSpacingHorizontal="@dimen/marginMedium"
+            android:layout_marginTop="@dimen/marginMedium">
+
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Document"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glass"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liquid"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Electronic"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Others"
+                app:checkedIconEnabled="true"
+                style="@style/CustomChipStyle"/>
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginSmall"
+        android:backgroundTint="@color/colorAccent"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Calculate"
+        android:textSize="@dimen/textSizeMedium"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/radiusLarge"
+        style="@style/Widget.MaterialComponents.Button"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

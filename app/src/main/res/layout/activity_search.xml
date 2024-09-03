@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/paddingLarge"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:contentInsetStartWithNavigation="5dp"
+        android:background="@color/colorPrimary"
+        app:titleCentered="true"
+        app:title="Calculate"
+        app:titleTextAppearance="@style/PopinsRegular"
+        app:titleTextColor="@color/colorWhite">
+
+        <LinearLayout
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/marginMedium"
+            android:transitionName="search_bar"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/ic_round">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:queryBackground="@color/colorTransparent"
+                app:searchIcon="@drawable/icon_search"
+                app:autoShowKeyboard="true"
+                android:inputType="textAutoComplete"
+                android:focusableInTouchMode="true"
+                app:iconifiedByDefault="false"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="@dimen/marginSmall"
+                android:src="@drawable/ic_scan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/paddingLarge"
+        android:layout_weight="1"
+        android:background="@color/colorLighterGray"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_rounded"
+            android:padding="@dimen/paddingSmall"
+            tools:listitem="@layout/itemview_search_result"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
