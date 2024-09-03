@@ -44,6 +44,32 @@ class HistoryActivity: ComponentActivity() {
 
 
     private fun setupTabs(){
+
+        binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.customView.apply {
+                    this?.findViewById<TextView>(R.id.badge)
+                        ?.backgroundTintList = ContextCompat.getColorStateList(
+                        this@HistoryActivity, R.color.colorAccentLight)
+                    this?.findViewById<TextView>(R.id.title)
+                        ?.setTextColor(resources.getColor(R.color.colorWhite))
+                }
+
+            }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                tab?.customView.apply {
+                    this?.findViewById<TextView>(R.id.badge)
+                        ?.backgroundTintList = ContextCompat.getColorStateList(
+                        this@HistoryActivity, R.color.badgeInActiveColor)
+                    this?.findViewById<TextView>(R.id.title)
+                        ?.setTextColor(resources.getColor(R.color.tabInActiveColor))
+                }
+            }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+            }
+        })
+
         val tabTitles = arrayOf(Tab("All", 15),
             Tab("Completed", 5),
             Tab("In progress", 3),
@@ -63,6 +89,7 @@ class HistoryActivity: ComponentActivity() {
 
             tab.customView = customView
             binding.tabLayout.addTab(tab)
+            binding.tabLayout.getTabAt(0)?.select()
         }
     }
 

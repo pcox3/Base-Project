@@ -2,8 +2,6 @@
 <resources>
     <color name="colorPrimary">#533B9C</color>
     <color name="colorPrimaryLight">#7358C3</color>
-    <color name="tabInActiveColor">#A189E5</color>
-    <color name="colorPrimaryRipple">#617358C3</color>
     <color name="colorOnPrimary">#FFF</color>
     <color name="colorPrimaryDark">#533B9C</color>
 
@@ -19,6 +17,11 @@
     <color name="colorLightGray">#D0CDCD</color>
     <color name="colorLighterGray">#F6F6FB</color>
     <color name="iconGray">#B2BCC1</color>
+
+
+    <color name="badgeInActiveColor">#7357C4</color>
+    <color name="tabInActiveColor">#9785CF</color>
+    <color name="colorPrimaryRipple">#617358C3</color>
 
     <color name="colorLoading">#508ABC</color>
     <color name="colorInProgress">#5FC195</color>

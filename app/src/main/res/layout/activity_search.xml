@@ -39,6 +39,7 @@
                 app:autoShowKeyboard="true"
                 android:inputType="textAutoComplete"
                 android:focusableInTouchMode="true"
+                app:closeIcon="@null"
                 app:iconifiedByDefault="false"/>
 
             <androidx.appcompat.widget.AppCompatImageView

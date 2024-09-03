@@ -14,7 +14,7 @@
         android:textSize="@dimen/textSizeMedium"
         android:text="All"
         android:textAllCaps="false"
-        android:textColor="@color/colorWhite"/>
+        android:textColor="@color/tabInActiveColor"/>
 
     <TextView
         android:id="@+id/badge"
@@ -22,10 +22,10 @@
         android:layout_height="25dp"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorLighterGray"
         android:textSize="@dimen/textSizeSmaller"
         android:background="@drawable/ic_rounded"
-        android:backgroundTint="@color/colorAccentLight"
+        android:backgroundTint="@color/badgeInActiveColor"
         android:text="15"/>
 
 </LinearLayout>

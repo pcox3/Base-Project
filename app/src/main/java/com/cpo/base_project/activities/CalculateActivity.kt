@@ -2,6 +2,9 @@ package com.cpo.base_project.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.Spannable
+import android.text.TextWatcher
 import android.view.ViewTreeObserver
 import android.view.animation.AnimationUtils
 import androidx.activity.ComponentActivity
@@ -18,6 +21,8 @@ class CalculateActivity: ComponentActivity() {
         with(binding){
             animateCategories()
 
+            editTextListener()
+
             toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
             button.setOnClickListener {
@@ -25,6 +30,23 @@ class CalculateActivity: ComponentActivity() {
             }
         }
 
+    }
+
+    private fun editTextListener(){
+        binding.location.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                s?.let {
+                    val length = it.length
+                    for (i in 0 until length) {
+                        if (it[i] == ' ') {
+                            it.replace(i, i + 1, "-")
+                        }
+                    }
+                }
+            }
+        })
     }
 
     private fun animateCategories(){

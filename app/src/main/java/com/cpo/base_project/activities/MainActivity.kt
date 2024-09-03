@@ -3,6 +3,7 @@ package com.cpo.base_project.activities
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.core.app.ActivityOptionsCompat
@@ -29,8 +30,10 @@ class MainActivity : ComponentActivity() {
                 categoriesRv.adapter = this
             }
 
-            searchView.setOnClickListener {
-                launch(SearchActivity(), it, "search_bar")
+            searchView.setOnQueryTextFocusChangeListener { v, hasFocus ->
+                if (hasFocus) {
+                    launch(SearchActivity(), v, "search_bar")
+                }
             }
 
 
